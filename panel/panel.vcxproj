@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{82212CF7-C4EA-436C-ADD5-F7AD56122BF5}</ProjectGuid>
+    <RootNamespace>ImGui Loader Base</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>panel</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(DXSDK_DIR)Include;$(ProjectDir);$(SolutionDir);$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)compiled\binary\$(Configuration)\</OutDir>
+    <TargetName>panel</TargetName>
+    <IntDir>$(SolutionDir)compiled\junk\panel\</IntDir>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(DXSDK_DIR)Include;$(ProjectDir);$(SolutionDir);$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)compiled\binary\$(Configuration)\</OutDir>
+    <TargetName>panel</TargetName>
+    <IntDir>$(SolutionDir)compiled\junk\panel\</IntDir>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="anti debug\anti dbg main.cc" />
+    <ClCompile Include="boosting\boosting.cc" />
+    <ClCompile Include="clip\clip.cc" />
+    <ClCompile Include="clip\clip_lock_impl.cc" />
+    <ClCompile Include="config.cc" />
+    <ClCompile Include="data\data.cc" />
+    <ClCompile Include="encryption\encryption.cc" />
+    <ClCompile Include="http\http.cc" />
+    <ClCompile Include="hwid\hwid.cc" />
+    <ClCompile Include="linguistics\linguistics.cc" />
+    <ClCompile Include="main.cc" />
+    <ClCompile Include="render\imgui\imgui.cpp" />
+    <ClCompile Include="render\imgui\imgui_demo.cpp" />
+    <ClCompile Include="render\imgui\imgui_draw.cpp" />
+    <ClCompile Include="render\imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="render\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="render\imgui\imgui_stdlib.cpp" />
+    <ClCompile Include="render\imgui\imgui_tables.cpp" />
+    <ClCompile Include="render\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="render\render.cc" />
+    <ClCompile Include="render\ui\ui.cc" />
+    <ClCompile Include="server\server.cc" />
+    <ClCompile Include="utils\utils.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="anti debug\anti dbg main.hh" />
+    <ClInclude Include="anti debug\xorstr.hpp" />
+    <ClInclude Include="boosting\boosting.hh" />
+    <ClInclude Include="clip\clip.hh" />
+    <ClInclude Include="clip\clip_lock_impl.hh" />
+    <ClInclude Include="config.hh" />
+    <ClInclude Include="data\data.hh" />
+    <ClInclude Include="encryption\encryption.hh" />
+    <ClInclude Include="encryption\sha512.hh" />
+    <ClInclude Include="http\http.hh" />
+    <ClInclude Include="http\lib_curl\curl.h" />
+    <ClInclude Include="http\lib_curl\curlbuild.h" />
+    <ClInclude Include="http\lib_curl\curlrules.h" />
+    <ClInclude Include="http\lib_curl\curlver.h" />
+    <ClInclude Include="http\lib_curl\easy.h" />
+    <ClInclude Include="http\lib_curl\mprintf.h" />
+    <ClInclude Include="http\lib_curl\multi.h" />
+    <ClInclude Include="http\lib_curl\stdcheaders.h" />
+    <ClInclude Include="http\lib_curl\typecheck-gcc.h" />
+    <ClInclude Include="hwid\hwid.hh" />
+    <ClInclude Include="includes.hh" />
+    <ClInclude Include="linguistics\linguistics.hh" />
+    <ClInclude Include="lobbies.hh" />
+    <ClInclude Include="render\imgui\imconfig.h" />
+    <ClInclude Include="render\imgui\imgui.h" />
+    <ClInclude Include="render\imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="render\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="render\imgui\imgui_internal.h" />
+    <ClInclude Include="render\imgui\imgui_stdlib.h" />
+    <ClInclude Include="render\imgui\imstb_rectpack.h" />
+    <ClInclude Include="render\imgui\imstb_textedit.h" />
+    <ClInclude Include="render\imgui\imstb_truetype.h" />
+    <ClInclude Include="render\render.hh" />
+    <ClInclude Include="render\texture\hide_windows.h" />
+    <ClInclude Include="render\texture\logo.h" />
+    <ClInclude Include="render\texture\play.h" />
+    <ClInclude Include="render\texture\stop.h" />
+    <ClInclude Include="render\texture\stop_csgo.h" />
+    <ClInclude Include="render\texture\visible.h" />
+    <ClInclude Include="render\ui\arrays.hh" />
+    <ClInclude Include="render\ui\kaguya.h" />
+    <ClInclude Include="render\ui\ui.hh" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="server\server.hh" />
+    <ClInclude Include="utils\fnv.h" />
+    <ClInclude Include="utils\json.hpp" />
+    <ClInclude Include="utils\lazy_importer.hpp" />
+    <ClInclude Include="utils\utils.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="panel.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="logo.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
